@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(228, 207, 205) !important; 
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f6d365;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+
+
+    }
+
+
+    .btn {
+        background-color: #3c687c;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        margin-right: 1090px;
+      }
+      
+      
+      .btn-secondary{
+        background-color: #6f6f6f;
+      }
+      .btn:hover {
+        background-color: #3c687c;
+      }
+      .btn-secondary:hover {
+        background-color: #6f6f6f;
+      }
+
+ 

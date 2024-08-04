@@ -1,0 +1,50 @@
+<section class="d-flex justify-content-center align-items-center" style="height: 100vh; background-color: #f7f4f4;">
+    <div class="card" style="width: 100%; height: 100%; border-radius: 0;">
+      <div class="row g-0 h-100">
+        <div class="col-md-2 gradient-custom text-center text-white" style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
+          <img src="assets/profile.png" alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+          <h5 *ngIf="userForm?.get('name')?.value">{{ userForm.get('name')?.value }}</h5>
+          <i class="far fa-edit mb-5" (click)="toggleEditMode()"></i>
+        </div>
+        <div class="col-md-10 d-flex flex-column">
+          <div class="card-body p-4 flex-grow-1">
+            <h6>User Information</h6>
+            <hr class="mt-0 mb-4">
+            <form [formGroup]="userForm">
+              <div class="row pt-1">
+                <div class="col-4 mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" formControlName="name" [readonly]="!isEditMode">
+                </div>
+                <div class="col-4 mb-3">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" formControlName="phone" [readonly]="!isEditMode">
+                </div>
+              </div>
+              <div class="row pt-1">
+                <div class="col-4 mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="emailId" formControlName="emailId" [readonly]="!isEditMode">
+                </div>
+                <div class="col-4 mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" name="userName" formControlName="userName" [readonly]="!isEditMode">
+                </div>
+              </div>
+              <br>
+              <div *ngIf="isEditMode" class="d-flex justify-content">
+                <button type="button" class="btn btn-primary me-3" (click)="saveUser()">Save</button>
+                <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+              </div>
+              <div *ngIf="!isEditMode" class="d-flex justify-content-end">
+                <button type="button" class="btn btn-primary" (click)="toggleEditMode()">Edit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
